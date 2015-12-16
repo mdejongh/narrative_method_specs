@@ -4,10 +4,10 @@
   "authors" : [ ],
   "contact" : "help@kbase.us",
   "visble" : true,
-  "categories" : ["inactive"],
+  "categories" : ["viewers"],
   "widgets" : {
     "input" : null,
-    "output" : "kbasePhenotypeSet"
+    "output" : "kbaseTabTable"
   },
   "parameters" : [ {
     "id" : "param0",
@@ -21,7 +21,21 @@
     }
   } ],
   "behavior" : {
-    "python_class" : "Microbes Metabolic Modeling",
-    "python_function" : "View Phenotype Set"
+    "none" : {
+      "output_mapping" : [
+        {
+          "constant_value": "KBasePhenotypes.PhenotypeSet",
+          "target_property": "type"
+        },
+        {
+          "input_parameter": "param0",
+          "target_property": "obj"
+        },
+        {
+          "narrative_system_variable": "workspace",
+          "target_property": "ws"
+        }
+      ]
+    }
   }
 }
